@@ -1,0 +1,42 @@
+cabal-version: 3.0
+
+name:           emitter
+version:        0.1.0.0
+description:    Simple local pub/sub — ported from NPM
+category:       Event Broker
+synopsis:       IO- and STM-based callback channels.
+homepage:       https://github.com/jmazon/emitter#readme
+bug-reports:    https://github.com/jmazon/emitter/issues
+author:         Jean-Baptiste Mazon
+maintainer:     Jean-Baptiste Mazon
+copyright:      2020 Jean-Baptiste Mazon
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog
+
+source-repository head
+  type: git
+  location: https://github.com/jmazon/emitter
+
+library
+  exposed-modules: Emitter
+  build-depends: aeson >= 1.4.7.1
+               , base >=4.7 && <5
+               , stm >= 2.5.0.0
+               , text >= 1.2.4.0
+               , unordered-containers >= 0.2.10.0
+  default-language: Haskell2010
+
+test-suite emitter-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs: test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends: emitter
+               , base >=4.7 && <5
+               , tasty >= 1.2.3
+               , tasty-hunit >= 0.10.0.2
+  default-language: Haskell2010
