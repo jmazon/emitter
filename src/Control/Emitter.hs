@@ -1,5 +1,5 @@
 {- |
-Module: Emitter
+Module: Control.Emitter
 Description: Simple local pub/sub
 Copyright: © 2020 Jean-Baptiste Mazon
 License: BSD3
@@ -21,7 +21,7 @@ Note that the event names are 'Text', to integrate with `aeson`.
 
 {-# LANGUAGE NamedFieldPuns #-}
 
-module Emitter
+module Control.Emitter
   ( -- * Main interface
     newEmitter
   , on

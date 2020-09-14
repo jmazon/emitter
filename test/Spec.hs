@@ -7,7 +7,7 @@ import Control.Applicative
 import Control.Monad
 import Data.IORef
 
-import Emitter
+import Control.Emitter
 
 main :: IO ()
 main = defaultMain tests
